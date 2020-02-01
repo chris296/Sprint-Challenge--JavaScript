@@ -13,11 +13,20 @@ class CuboidMaker {
         return 2 * (this.length * this.height + this.length * this.height + this.width * this.height);
     }
 }
-class cuboid extends CuboidMaker {
+class cube extends CuboidMaker {
     constructor(attributes) {
         super(attributes);
     }
+    volume() {
+        return this.length * this.width * this.height;
+    }
+    surfaceArea() {
+        return 2 * (this.length * this.height + this.length * this.height + this.width * this.height);
+    }
 }
+
+const cuboid = new cube({length: 4, width: 5, height: 5})
+
 
 // Test your volume and surfaceArea methods by uncommenting the logs below:
 // console.log(cuboid.volume()); // 100
