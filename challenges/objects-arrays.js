@@ -159,17 +159,17 @@ getContacts(graduates);
 console.log(contactInfo);
 
 /* Request 3: Find out how many universities have the string "Uni" included in their name. Create a new array called unisWithUni that contains them all. This will be an array of objects. Log the result. */
-const unisWithUni = [];
-var toSearch = "Uni";
+let unisWithUni = [];
 
-for(var i=0; i<graduates.length; i++) {
-  for(key in graduates[i]) {
-    if(graduates[i][key].indexOf(toSearch)!=-1) {
-      unisWithUni.push(graduates[i]);
-    }
+function findUni(arr){ 
+  for(let i = 0; i < arr.length; i++){
+      let university = arr[i].university
+      if(university.includes('Uni')){
+          unisWithUni.push({university: university})
+      }
   }
 }
-
+findUni(graduates);
 console.log(unisWithUni);
 
 
